@@ -5,12 +5,13 @@ checks and runs them from one scheduled task. Each check is one Markdown file in
 `checks/`. Adding a check means adding a file, not another skill or another scheduled
 task.
 
-Two checks ship with it:
+Three checks ship with it:
 
 | Check | What it catches |
 |---|---|
 | `security-scan` | anything **new** in your AI-agent setup that could install or run malware, steal secrets, add persistence, send data out, or hide actions from you |
 | `skill-audit` | Claude skills that overlap, contradict each other, or go unused |
+| `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step |
 
 ## Why a security scan for agent files
 
@@ -48,7 +49,9 @@ steer your agents.
 - Claude Code; the desktop app runs scheduled tasks while it is open
 - Optional: the [model-router](https://github.com/yosefco3/claude-model-router) plugin,
   whose `scout` agent lets skill-audit read skills in parallel. Without it, skill-audit
-  uses the built-in `Explore` agent.
+  uses the built-in `Explore` agent. Its `router` CLI is what the router-usage check
+  reads; without it that check reports `failed` (set `enabled: false` in
+  `checks/router-usage.md` if you don't use the router).
 
 ## Install
 
@@ -126,6 +129,8 @@ check". A check can run `weekly` (the default) or `monthly`.
 ## Data that stays on your machine
 
 - `~/.claude/security/`: the approved baseline and the scan reports
+- `~/.claude/model-router/reports/`: router-usage reports and the weekly metrics JSON the
+  next run compares against.
 - `~/.claude/skills-audit/`: skill-audit reports and `decisions.md` (merge and
   keep-separate decisions)
 - `~/.claude/weekly-checks/`: `settings.toml` and the combined summaries
@@ -137,14 +142,17 @@ SKILL.md                             the runner: settings, modes, rules, check f
 checks/<name>.md                     one file per check (frontmatter + Goal/Run/Result/Apply)
 checks/<name>/                       a check's supporting files
 scripts/scan_agent_instructions.py   the security scanner
+scripts/router_usage.py              router stats → metrics, flags and week-over-week trend
 schedule/weekly-checks.md            the scheduled task (cron + prompt)
 tests/test_scan.py                   scanner tests (fake home directories, stdlib unittest)
+tests/test_router_usage.py           metrics script tests (anonymized fixture in tests/fixtures/)
 ```
 
 ## Tests
 
 ```bash
 python3 -I ~/.claude/skills/weekly-checks/tests/test_scan.py -v
+python3 -I ~/.claude/skills/weekly-checks/tests/test_router_usage.py -v
 ```
 
 ## Updating

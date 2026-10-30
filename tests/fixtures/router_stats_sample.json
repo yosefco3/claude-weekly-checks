@@ -1,0 +1,1140 @@
+{
+  "since": "2026-10-23T21:14:58+02:00",
+  "generated_at": "2026-10-30T21:14:59+02:00",
+  "sessions": [
+    {
+      "project": "project-01",
+      "project_dir": "-home-user-project-01",
+      "session": "cbe06e41",
+      "session_id": "cbe06e41-439c-c81f-a6ef-4ec744a5f401",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 374,
+      "subagent_messages": 125,
+      "main_cost": 70.903413,
+      "subagent_cost": 3.492944,
+      "total_cost": 74.396357,
+      "delegations": {
+        "reviewer": 4,
+        "builder": 2,
+        "test-writer": 3,
+        "mechanic": 3,
+        "scout": 1
+      },
+      "delegation_count": 13,
+      "lookups": 1,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 28
+          },
+          "runs": 2,
+          "messages": 28,
+          "cost": 0.925215,
+          "router": true
+        },
+        "mechanic": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 21
+          },
+          "runs": 3,
+          "messages": 21,
+          "cost": 0.033269,
+          "router": true
+        },
+        "reviewer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 35
+          },
+          "runs": 4,
+          "messages": 35,
+          "cost": 1.343866,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 18
+          },
+          "runs": 1,
+          "messages": 18,
+          "cost": 0.165422,
+          "router": true
+        },
+        "test-writer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 23
+          },
+          "runs": 3,
+          "messages": 23,
+          "cost": 1.025173,
+          "router": true
+        }
+      },
+      "saved_repriced": 5.592304,
+      "saved_inline": 29.713349,
+      "saved_computable": true
+    },
+    {
+      "project": "project-02",
+      "project_dir": "-home-user-project-02",
+      "session": "e60f0b34",
+      "session_id": "e60f0b34-afb0-757c-3aeb-6aea34264589",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 120,
+      "subagent_messages": 33,
+      "main_cost": 60.229674,
+      "subagent_cost": 0.135224,
+      "total_cost": 60.364897,
+      "delegations": {
+        "scout": 2
+      },
+      "delegation_count": 2,
+      "lookups": 8,
+      "subagents": {
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 33
+          },
+          "runs": 2,
+          "messages": 33,
+          "cost": 0.135224,
+          "router": true
+        }
+      },
+      "saved_repriced": 5.318528,
+      "saved_inline": 10.817404,
+      "saved_computable": true
+    },
+    {
+      "project": "project-02",
+      "project_dir": "-home-user-project-02",
+      "session": "276e3893",
+      "session_id": "276e3893-4b0b-93a1-717f-28b35f2e8c07",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 71,
+      "subagent_messages": 282,
+      "main_cost": 22.273559,
+      "subagent_cost": 14.040898,
+      "total_cost": 36.314458,
+      "delegations": {
+        "general-purpose": 4
+      },
+      "delegation_count": 4,
+      "lookups": 4,
+      "subagents": {
+        "general-purpose": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 282
+          },
+          "runs": 4,
+          "messages": 282,
+          "cost": 14.040898,
+          "router": false
+        }
+      },
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-03",
+      "project_dir": "-home-user-project-03",
+      "session": "ade34cc5",
+      "session_id": "ade34cc5-4ee0-048f-b608-6eabea57db48",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 61,
+      "subagent_messages": 207,
+      "main_cost": 5.136185,
+      "subagent_cost": 30.650148,
+      "total_cost": 35.786333,
+      "delegations": {
+        "general-purpose": 6
+      },
+      "delegation_count": 6,
+      "lookups": 2,
+      "subagents": {
+        "general-purpose": {
+          "model": "claude-opus-5-5",
+          "models": {
+            "claude-opus-5-5": 207
+          },
+          "runs": 6,
+          "messages": 207,
+          "cost": 30.650148,
+          "router": false
+        }
+      },
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-04",
+      "project_dir": "-home-user-project-04",
+      "session": "af9c89c0",
+      "session_id": "af9c89c0-ee99-741d-eb79-79266502b5dc",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 202,
+      "subagent_messages": 146,
+      "main_cost": 25.434173,
+      "subagent_cost": 7.001956,
+      "total_cost": 32.436129,
+      "delegations": {
+        "general-purpose": 3,
+        "mechanic": 1,
+        "scout": 2,
+        "builder": 3
+      },
+      "delegation_count": 9,
+      "lookups": 2,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 28
+          },
+          "runs": 3,
+          "messages": 28,
+          "cost": 1.071059,
+          "router": true
+        },
+        "general-purpose": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 73
+          },
+          "runs": 3,
+          "messages": 73,
+          "cost": 5.881199,
+          "router": false
+        },
+        "mechanic": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 19
+          },
+          "runs": 1,
+          "messages": 19,
+          "cost": 0.017,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 26
+          },
+          "runs": 2,
+          "messages": 26,
+          "cost": 0.032698,
+          "router": true
+        }
+      },
+      "saved_repriced": 2.629564,
+      "saved_inline": 11.11303,
+      "saved_computable": true
+    },
+    {
+      "project": "project-05",
+      "project_dir": "-home-user-project-05",
+      "session": "89e48964",
+      "session_id": "89e48964-a81c-1e04-b0d0-4074fdbd1dd9",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 158,
+      "subagent_messages": 202,
+      "main_cost": 23.227991,
+      "subagent_cost": 8.722526,
+      "total_cost": 31.950517,
+      "delegations": {
+        "scout": 5,
+        "builder": 4,
+        "general-purpose": 1
+      },
+      "delegation_count": 10,
+      "lookups": 12,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 81
+          },
+          "runs": 4,
+          "messages": 81,
+          "cost": 4.166009,
+          "router": true
+        },
+        "general-purpose": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 11
+          },
+          "runs": 1,
+          "messages": 11,
+          "cost": 0.733562,
+          "router": false
+        },
+        "scout": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 84,
+            "claude-haiku-5-5": 26
+          },
+          "runs": 5,
+          "messages": 110,
+          "cost": 3.822956,
+          "router": true
+        }
+      },
+      "saved_repriced": 9.126869,
+      "saved_inline": 39.368246,
+      "saved_computable": true
+    },
+    {
+      "project": "project-06",
+      "project_dir": "-home-user-project-06",
+      "session": "c592e39f",
+      "session_id": "c592e39f-16c7-146e-2999-8cfe8b19b727",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 206,
+      "subagent_messages": 94,
+      "main_cost": 23.379737,
+      "subagent_cost": 1.287614,
+      "total_cost": 24.667352,
+      "delegations": {
+        "builder": 3,
+        "mechanic": 4
+      },
+      "delegation_count": 7,
+      "lookups": 4,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 55
+          },
+          "runs": 3,
+          "messages": 55,
+          "cost": 1.147589,
+          "router": true
+        },
+        "mechanic": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 39
+          },
+          "runs": 4,
+          "messages": 39,
+          "cost": 0.140025,
+          "router": true
+        }
+      },
+      "saved_repriced": 5.988053,
+      "saved_inline": 16.723745,
+      "saved_computable": true
+    },
+    {
+      "project": "project-01",
+      "project_dir": "-home-user-project-01",
+      "session": "def558c7",
+      "session_id": "def558c7-aadb-fa1b-7f51-bd7630fc18ad",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 86,
+      "subagent_messages": 30,
+      "main_cost": 23.542079,
+      "subagent_cost": 0.653975,
+      "total_cost": 24.196055,
+      "delegations": {
+        "scout": 2,
+        "builder": 2,
+        "reviewer": 1
+      },
+      "delegation_count": 5,
+      "lookups": 24,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 6
+          },
+          "runs": 2,
+          "messages": 6,
+          "cost": 0.128288,
+          "router": true
+        },
+        "reviewer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 10
+          },
+          "runs": 1,
+          "messages": 10,
+          "cost": 0.496805,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 14
+          },
+          "runs": 2,
+          "messages": 14,
+          "cost": 0.028882,
+          "router": true
+        }
+      },
+      "saved_repriced": 4.783624,
+      "saved_inline": 8.91415,
+      "saved_computable": true
+    },
+    {
+      "project": "project-05",
+      "project_dir": "-home-user-project-05",
+      "session": "1184009b",
+      "session_id": "1184009b-08f6-65a2-8236-9e8202b1d82c",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 94,
+      "subagent_messages": 105,
+      "main_cost": 16.899376,
+      "subagent_cost": 5.285153,
+      "total_cost": 22.184529,
+      "delegations": {
+        "reviewer": 2,
+        "scout": 3,
+        "builder": 7,
+        "general-purpose": 5
+      },
+      "delegation_count": 17,
+      "lookups": 5,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 44
+          },
+          "runs": 7,
+          "messages": 44,
+          "cost": 1.225688,
+          "router": true
+        },
+        "general-purpose": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 33
+          },
+          "runs": 5,
+          "messages": 33,
+          "cost": 3.252401,
+          "router": false
+        },
+        "reviewer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 15
+          },
+          "runs": 2,
+          "messages": 15,
+          "cost": 0.612764,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 13
+          },
+          "runs": 3,
+          "messages": 13,
+          "cost": 0.1943,
+          "router": true
+        }
+      },
+      "saved_repriced": 16.123562,
+      "saved_inline": 25.967415,
+      "saved_computable": true
+    },
+    {
+      "project": "project-02",
+      "project_dir": "-home-user-project-02",
+      "session": "69693699",
+      "session_id": "69693699-4f6a-8a8d-40a1-5242c0d212b6",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 61,
+      "subagent_messages": 6,
+      "main_cost": 20.410639,
+      "subagent_cost": 0.00887,
+      "total_cost": 20.419509,
+      "delegations": {
+        "scout": 1
+      },
+      "delegation_count": 1,
+      "lookups": 5,
+      "subagents": {
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 6
+          },
+          "runs": 1,
+          "messages": 6,
+          "cost": 0.00887,
+          "router": true
+        }
+      },
+      "saved_repriced": 0.826786,
+      "saved_inline": 1.175682,
+      "saved_computable": true
+    },
+    {
+      "project": "project-07",
+      "project_dir": "-home-user-project-07",
+      "session": "528e67dd",
+      "session_id": "528e67dd-fd3e-7f60-af8f-b73ccf4ab562",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 129,
+      "subagent_messages": 132,
+      "main_cost": 13.536318,
+      "subagent_cost": 6.718134,
+      "total_cost": 20.254453,
+      "delegations": {
+        "builder": 4,
+        "test-writer": 1,
+        "reviewer": 1,
+        "scout": 1
+      },
+      "delegation_count": 7,
+      "lookups": 9,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 86
+          },
+          "runs": 4,
+          "messages": 86,
+          "cost": 5.490171,
+          "router": true
+        },
+        "reviewer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 10
+          },
+          "runs": 1,
+          "messages": 10,
+          "cost": 0.658718,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 27
+          },
+          "runs": 1,
+          "messages": 27,
+          "cost": 0.278386,
+          "router": true
+        },
+        "test-writer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 9
+          },
+          "runs": 1,
+          "messages": 9,
+          "cost": 0.29086,
+          "router": true
+        }
+      },
+      "saved_repriced": 7.377558,
+      "saved_inline": 21.655419,
+      "saved_computable": true
+    },
+    {
+      "project": "project-06",
+      "project_dir": "-home-user-project-06",
+      "session": "c49e384b",
+      "session_id": "c49e384b-0e5d-6749-4b7f-df8b75e36334",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 91,
+      "subagent_messages": 150,
+      "main_cost": 13.824025,
+      "subagent_cost": 5.345975,
+      "total_cost": 19.17,
+      "delegations": {
+        "general-purpose": 4
+      },
+      "delegation_count": 4,
+      "lookups": 0,
+      "subagents": {
+        "general-purpose": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 150
+          },
+          "runs": 4,
+          "messages": 150,
+          "cost": 5.345975,
+          "router": false
+        }
+      },
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-02",
+      "project_dir": "-home-user-project-02",
+      "session": "9a948df2",
+      "session_id": "9a948df2-f749-6497-e804-c8a86193f23e",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 45,
+      "subagent_messages": 85,
+      "main_cost": 14.985335,
+      "subagent_cost": 0.336611,
+      "total_cost": 15.321945,
+      "delegations": {
+        "scout": 3
+      },
+      "delegation_count": 3,
+      "lookups": 0,
+      "subagents": {
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 85
+          },
+          "runs": 3,
+          "messages": 85,
+          "cost": 0.336611,
+          "router": true
+        }
+      },
+      "saved_repriced": 12.814816,
+      "saved_inline": 18.869796,
+      "saved_computable": true
+    },
+    {
+      "project": "project-08",
+      "project_dir": "-home-user-project-08",
+      "session": "2e52b830",
+      "session_id": "2e52b830-543c-626f-aef0-2cd5033bfa5a",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 56,
+      "subagent_messages": 45,
+      "main_cost": 10.490687,
+      "subagent_cost": 1.117241,
+      "total_cost": 11.607928,
+      "delegations": {
+        "scout": 1,
+        "builder": 2
+      },
+      "delegation_count": 3,
+      "lookups": 2,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 26
+          },
+          "runs": 2,
+          "messages": 26,
+          "cost": 0.942157,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 19
+          },
+          "runs": 1,
+          "messages": 19,
+          "cost": 0.175084,
+          "router": true
+        }
+      },
+      "saved_repriced": 7.977009,
+      "saved_inline": 11.485869,
+      "saved_computable": true
+    },
+    {
+      "project": "project-05",
+      "project_dir": "-home-user-project-05",
+      "session": "b93e9925",
+      "session_id": "b93e9925-42ee-7b0a-ab71-354173254105",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 27,
+      "subagent_messages": 5,
+      "main_cost": 9.310082,
+      "subagent_cost": 0.010039,
+      "total_cost": 9.320121,
+      "delegations": {
+        "scout": 1
+      },
+      "delegation_count": 1,
+      "lookups": 3,
+      "subagents": {
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 5
+          },
+          "runs": 1,
+          "messages": 5,
+          "cost": 0.010039,
+          "router": true
+        }
+      },
+      "saved_repriced": 0.934654,
+      "saved_inline": 1.247915,
+      "saved_computable": true
+    },
+    {
+      "project": "project-04",
+      "project_dir": "-home-user-project-04",
+      "session": "eddcea5d",
+      "session_id": "eddcea5d-07e7-195c-a54e-661ea355ed18",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 38,
+      "subagent_messages": 19,
+      "main_cost": 8.854737,
+      "subagent_cost": 0.424022,
+      "total_cost": 9.27876,
+      "delegations": {
+        "builder": 4
+      },
+      "delegation_count": 4,
+      "lookups": 1,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 19
+          },
+          "runs": 4,
+          "messages": 19,
+          "cost": 0.424022,
+          "router": true
+        }
+      },
+      "saved_repriced": 1.552525,
+      "saved_inline": 2.748361,
+      "saved_computable": true
+    },
+    {
+      "project": "project-09",
+      "project_dir": "-home-user-project-09",
+      "session": "145963bf",
+      "session_id": "145963bf-0476-38fe-1a02-c7e4c5f88c48",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 59,
+      "subagent_messages": 0,
+      "main_cost": 8.307932,
+      "subagent_cost": 0.0,
+      "total_cost": 8.307932,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 6,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-04",
+      "project_dir": "-home-user-project-04",
+      "session": "88b07e83",
+      "session_id": "88b07e83-931f-71b9-b63d-edd055f3ea34",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 64,
+      "subagent_messages": 13,
+      "main_cost": 6.7636,
+      "subagent_cost": 0.260404,
+      "total_cost": 7.024004,
+      "delegations": {
+        "builder": 1
+      },
+      "delegation_count": 1,
+      "lookups": 3,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 13
+          },
+          "runs": 1,
+          "messages": 13,
+          "cost": 0.260404,
+          "router": true
+        }
+      },
+      "saved_repriced": 0.21961,
+      "saved_inline": 0.639807,
+      "saved_computable": true
+    },
+    {
+      "project": "project-08",
+      "project_dir": "-home-user-project-08",
+      "session": "ebe12247",
+      "session_id": "ebe12247-f3fa-4b26-7a52-6e33509d87b0",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 27,
+      "subagent_messages": 6,
+      "main_cost": 6.412738,
+      "subagent_cost": 0.012877,
+      "total_cost": 6.425614,
+      "delegations": {
+        "scout": 1
+      },
+      "delegation_count": 1,
+      "lookups": 0,
+      "subagents": {
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 6
+          },
+          "runs": 1,
+          "messages": 6,
+          "cost": 0.012877,
+          "router": true
+        }
+      },
+      "saved_repriced": 1.200118,
+      "saved_inline": 1.504089,
+      "saved_computable": true
+    },
+    {
+      "project": "project-03",
+      "project_dir": "-home-user-project-03",
+      "session": "f60e9857",
+      "session_id": "f60e9857-87a7-52d7-3579-d4c268f03b48",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 27,
+      "subagent_messages": 19,
+      "main_cost": 6.277649,
+      "subagent_cost": 0.042142,
+      "total_cost": 6.319791,
+      "delegations": {
+        "scout": 1
+      },
+      "delegation_count": 1,
+      "lookups": 1,
+      "subagents": {
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 19
+          },
+          "runs": 1,
+          "messages": 19,
+          "cost": 0.042142,
+          "router": true
+        }
+      },
+      "saved_repriced": 1.466071,
+      "saved_inline": 2.286295,
+      "saved_computable": true
+    },
+    {
+      "project": "project-08",
+      "project_dir": "-home-user-project-08",
+      "session": "ca2d3a82",
+      "session_id": "ca2d3a82-643d-0e42-3062-e7da82d917ad",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 28,
+      "subagent_messages": 16,
+      "main_cost": 6.06696,
+      "subagent_cost": 0.205412,
+      "total_cost": 6.272372,
+      "delegations": {
+        "scout": 1,
+        "builder": 1,
+        "test-writer": 1
+      },
+      "delegation_count": 3,
+      "lookups": 1,
+      "subagents": {
+        "builder": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 4
+          },
+          "runs": 1,
+          "messages": 4,
+          "cost": 0.112581,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 8
+          },
+          "runs": 1,
+          "messages": 8,
+          "cost": 0.011566,
+          "router": true
+        },
+        "test-writer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 4
+          },
+          "runs": 1,
+          "messages": 4,
+          "cost": 0.081265,
+          "router": true
+        }
+      },
+      "saved_repriced": 1.717191,
+      "saved_inline": 2.432245,
+      "saved_computable": true
+    },
+    {
+      "project": "project-05",
+      "project_dir": "-home-user-project-05",
+      "session": "88cc463d",
+      "session_id": "88cc463d-9296-1fc4-e6cd-c7cbe2179254",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 43,
+      "subagent_messages": 68,
+      "main_cost": 4.739267,
+      "subagent_cost": 1.245865,
+      "total_cost": 5.985132,
+      "delegations": {
+        "scout": 2,
+        "reviewer": 1
+      },
+      "delegation_count": 3,
+      "lookups": 0,
+      "subagents": {
+        "reviewer": {
+          "model": "claude-sonnet-5-5",
+          "models": {
+            "claude-sonnet-5-5": 22
+          },
+          "runs": 1,
+          "messages": 22,
+          "cost": 0.811248,
+          "router": true
+        },
+        "scout": {
+          "model": "claude-haiku-5-5",
+          "models": {
+            "claude-haiku-5-5": 46
+          },
+          "runs": 2,
+          "messages": 46,
+          "cost": 0.434617,
+          "router": true
+        }
+      },
+      "saved_repriced": 6.014226,
+      "saved_inline": 9.790238,
+      "saved_computable": true
+    },
+    {
+      "project": "project-04",
+      "project_dir": "-home-user-project-04",
+      "session": "2e2b1b65",
+      "session_id": "2e2b1b65-7990-6747-1f3e-0f53c8f3dd06",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 18,
+      "subagent_messages": 0,
+      "main_cost": 4.300722,
+      "subagent_cost": 0.0,
+      "total_cost": 4.300722,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 0,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-02",
+      "project_dir": "-home-user-project-02",
+      "session": "a471f620",
+      "session_id": "a471f620-ed64-f9d2-8a40-644ba34eba2b",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 7,
+      "subagent_messages": 0,
+      "main_cost": 3.150278,
+      "subagent_cost": 0.0,
+      "total_cost": 3.150278,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 0,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-04",
+      "project_dir": "-home-user-project-04",
+      "session": "af7abad3",
+      "session_id": "af7abad3-36e9-5051-c243-f2d9138ee344",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 26,
+      "subagent_messages": 0,
+      "main_cost": 2.930189,
+      "subagent_cost": 0.0,
+      "total_cost": 2.930189,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 0,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-04",
+      "project_dir": "-home-user-project-04",
+      "session": "41514de0",
+      "session_id": "41514de0-971f-8e41-127f-f3c00174c934",
+      "main_model": "claude-fable-5-1",
+      "main_messages": 7,
+      "subagent_messages": 0,
+      "main_cost": 2.851293,
+      "subagent_cost": 0.0,
+      "total_cost": 2.851293,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 0,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-10",
+      "project_dir": "-home-user-project-10",
+      "session": "aa975110",
+      "session_id": "aa975110-ba9e-8849-a483-ed96c8281e33",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 3,
+      "subagent_messages": 0,
+      "main_cost": 1.854216,
+      "subagent_cost": 0.0,
+      "total_cost": 1.854216,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 0,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    },
+    {
+      "project": "project-10",
+      "project_dir": "-home-user-project-10",
+      "session": "17590280",
+      "session_id": "17590280-035e-5df3-ff6c-a11414878c8f",
+      "main_model": "claude-opus-5-5",
+      "main_messages": 19,
+      "subagent_messages": 0,
+      "main_cost": 1.783136,
+      "subagent_cost": 0.0,
+      "total_cost": 1.783136,
+      "delegations": {},
+      "delegation_count": 0,
+      "lookups": 0,
+      "subagents": {},
+      "saved_repriced": 0.0,
+      "saved_inline": 0.0,
+      "saved_computable": true
+    }
+  ],
+  "totals": {
+    "sessions": 28,
+    "main_cost": 417.875987,
+    "subagent_cost": 86.998031,
+    "total_cost": 504.874019,
+    "subagent_share_pct": 17.231632,
+    "delegations": {
+      "builder": 33,
+      "general-purpose": 23,
+      "mechanic": 8,
+      "reviewer": 9,
+      "scout": 27,
+      "test-writer": 5
+    },
+    "delegation_count": 105,
+    "lookups": 93,
+    "saved_repriced": 91.663068,
+    "saved_inline": 216.453055,
+    "saved_inline_pct": 30.007616,
+    "subagents_by_type": {
+      "builder": {
+        "model": "claude-sonnet-5-5",
+        "models": {
+          "claude-sonnet-5-5": 390
+        },
+        "runs": 33,
+        "messages": 390,
+        "cost": 15.893183,
+        "router": true
+      },
+      "general-purpose": {
+        "model": "claude-sonnet-5-5",
+        "models": {
+          "claude-sonnet-5-5": 549,
+          "claude-opus-5-5": 207
+        },
+        "runs": 23,
+        "messages": 756,
+        "cost": 59.904183,
+        "router": false
+      },
+      "mechanic": {
+        "model": "claude-haiku-5-5",
+        "models": {
+          "claude-haiku-5-5": 79
+        },
+        "runs": 8,
+        "messages": 79,
+        "cost": 0.190294,
+        "router": true
+      },
+      "reviewer": {
+        "model": "claude-sonnet-5-5",
+        "models": {
+          "claude-sonnet-5-5": 92
+        },
+        "runs": 9,
+        "messages": 92,
+        "cost": 3.923401,
+        "router": true
+      },
+      "scout": {
+        "model": "claude-haiku-5-5",
+        "models": {
+          "claude-haiku-5-5": 351,
+          "claude-sonnet-5-5": 84
+        },
+        "runs": 27,
+        "messages": 435,
+        "cost": 5.689673,
+        "router": true
+      },
+      "test-writer": {
+        "model": "claude-sonnet-5-5",
+        "models": {
+          "claude-sonnet-5-5": 36
+        },
+        "runs": 5,
+        "messages": 36,
+        "cost": 1.397298,
+        "router": true
+      }
+    }
+  },
+  "unknown_models": {},
+  "note": "saved (est.) = what the same subagent steps would have cost on the main model, re-reading the main context at each step, minus what they cost. Repriced = the subagent's own tokens at the main model's rates (a floor)."
+}

@@ -4,12 +4,16 @@ description: >
   The single home for every recurring check (weekly by default). One scheduled task runs
   this skill; it runs every check in its checks/ folder and sends one combined summary in
   the user's report language. Built-in checks: security-scan (agent instruction files,
-  hooks, plugins, MCP servers and autorun files that could install or run malware) and
-  skill-audit (overlapping, contradicting or redundant skills). Use when the scheduled
+  hooks, plugins, MCP servers and autorun files that could install or run malware),
+  skill-audit (overlapping, contradicting or redundant skills) and router-usage (weekly
+  model-router stats: non-router subagents, main-thread lookups, long sessions, model
+  mix, with recommendations). Use when the scheduled
   task runs it; when the user asks to run all checks or one of them now ("run the weekly
   checks", "security scan", "check for malicious instructions", "audit my skills",
   "בדיקה שבועית", "תריץ את הבדיקות", "בדיקת אבטחה", "תבדוק שאין הוראות זדוניות",
-  "סריקת סקילים", "תעשה סדר בסקילים", "יש סתירות בין הסקילים?", "אילו סקילים מיותרים");
+  "סריקת סקילים", "תעשה סדר בסקילים", "יש סתירות בין הסקילים?", "אילו סקילים מיותרים",
+  "router usage", "router report", "check the router", "בדיקת ראוטר", "דוח ראוטר",
+  "שימוש בראוטר", "כמה עלה הראוטר");
   for a check's follow-up ("approve baseline" / "אשר בסיס" after a security scan,
   "apply" / "בצע" after a skill audit); and WHENEVER the user wants to add, change, pause
   or remove a weekly, monthly or other recurring check. New checks go here as
@@ -132,3 +136,4 @@ Supporting files of a check go in `checks/<name>/`; scripts go in `scripts/`.
 |---|---|---|---|
 | `security-scan` | instruction files, hooks, plugins, MCP servers and autorun files: anything new that could install or run malware | weekly | `~/.claude/security/reports/` (baseline on apply) |
 | `skill-audit` | skills that overlap, contradict each other or are unused | weekly | `~/.claude/skills-audit/` (skills on apply) |
+| `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step | weekly | `~/.claude/model-router/reports/` |
