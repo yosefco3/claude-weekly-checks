@@ -117,3 +117,10 @@ All paths are under `~/Desktop/global/ai-costs/`.
   Chrome, write the page, wait a few seconds, read `check` and close the tab. After a
   dataset-only run, a `check` older than the write (or missing) with no `runs` means the
   page was not judged: say so in the report, and don't count it as `attention`.
+  When `page.html` did not change but a `check` is wanted, append a hidden HTML comment
+  with the date to `page.html` and write it while the page is open: that was enough to
+  get a fresh `check`.
+- On this machine Chrome screenshots can time out on every page (CDP
+  `Page.captureScreenshot`), and the dashboard renders in a cross-origin iframe, so
+  `get_page_text` and `read_page` see only the claude.ai frame. Then `check` is the only
+  verification: report that the page was not looked at.
