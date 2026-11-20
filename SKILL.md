@@ -13,7 +13,7 @@ description: >
   "בדיקה שבועית", "תריץ את הבדיקות", "בדיקת אבטחה", "תבדוק שאין הוראות זדוניות",
   "סריקת סקילים", "תעשה סדר בסקילים", "יש סתירות בין הסקילים?", "אילו סקילים מיותרים",
   "router usage", "router report", "check the router", "בדיקת ראוטר", "דוח ראוטר",
-  "שימוש בראוטר", "כמה עלה הראוטר");
+  "שימוש בראוטר", "כמה עלה הראוטר", "AI costs", "עלויות AI", "תעדכן את דשבורד העלויות");
   for a check's follow-up ("approve baseline" / "אשר בסיס" after a security scan,
   "apply" / "בצע" after a skill audit); and WHENEVER the user wants to add, change, pause
   or remove a weekly, monthly or other recurring check. New checks go here as
@@ -147,3 +147,4 @@ table below and no phrases in the description.
 | `security-scan` | instruction files, hooks, plugins, MCP servers and autorun files: anything new that could install or run malware | weekly | `~/.claude/security/reports/` (baseline on apply) |
 | `skill-audit` | skills that overlap, contradict each other or are unused | weekly | `~/.claude/skills-audit/` (skills on apply) |
 | `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step | weekly | `~/.claude/model-router/reports/` |
+| `ai-costs` | refreshes the "עלויות AI" dashboard: Gmail receipts (read-only), LevelBot usage over ssh, Claude Code value from transcripts; flags big or duplicate charges | weekly | `~/Desktop/global/ai-costs/`, the dashboard artifact |
