@@ -34,13 +34,19 @@ All paths are under `~/Desktop/global/ai-costs/`.
    A thread can hold several receipts (Google sends payments for different billing
    accounts into one thread), and the summary view of a search shows only the newest
    message: open every receipt thread with `get_thread` and record each message.
-   Claude and ChatGPT subscription invoices are not emailed: if Claude in Chrome is
+   Claude and ChatGPT subscription invoices can't be read from Gmail (Claude's are
+   withheld by the connector, ChatGPT's are not emailed): if Claude in Chrome is
    connected, read `https://claude.ai/settings/billing` (Invoices table) and
    `https://chatgpt.com/settings/billing` (Transaction history), read-only, never
    clicking Cancel, Upgrade, Renew or Adjust plan. Add new rows as vendor `Anthropic`
    with `message_id` `claude.ai-invoice-<date>`, or vendor `OpenAI` with
    `chatgpt-invoice-<date>` (ChatGPT shows dates as month/day/year). Skip ₪0 / $0 rows.
    Otherwise say in the report that they were not checked.
+   Anthropic API (Console) invoices are emailed, but the Gmail connector withholds every
+   Anthropic mail: read `https://platform.claude.com/settings/billing` (Invoice history,
+   click Load more), read-only, never clicking Buy credits or auto-reload. Add new rows as
+   vendor `Anthropic API` with `message_id` `console-invoice-<invoice number>`; skip rows
+   marked Free (promotional credit).
    Plans the user cancelled are listed under `cancelled` in `receipts.json`
    (vendor → `cancelled_on`, `active_until`), and the forecast skips them. A new receipt
    from a cancelled vendor means the plan renewed: report it as `attention` and remove
@@ -82,8 +88,17 @@ All paths are under `~/Desktop/global/ai-costs/`.
 
 ## Lessons
 
-- Claude subscription charges come from two places: claude.ai invoices (Stripe, not
-  emailed; read the billing page) and, once in July 2026, Google Play receipts in Gmail.
+- Claude subscription charges come from two places: claude.ai invoices (Stripe; the mails
+  are withheld, so read the billing page) and, once in July 2026, Google Play receipts in Gmail.
+- The Gmail connector withholds all Anthropic mail: search finds "Your receipt from
+  Anthropic, PBC" threads, but get_thread returns no messages. Console API invoices were
+  missed for months because of this. The search summary's `messageCount` is unreliable
+  too: it showed 1 for a thread that held 6 messages.
+  To find missed receipts, list `label:קבלות-AI` and `label:קבלות-אחסון` (the user's Gmail
+  filters fill both) with IDS_ONLY in date windows of under 50 threads, and compare the
+  IDs against `receipts.json` plus the threads explained in `known_threads.json`
+  (withheld Anthropic mails, Stripe copies, $0 invoices, undecided items). Add each newly
+  explained thread there.
 - ChatGPT Plus charges are not emailed either; the OpenAI API platform
   (platform.openai.com, Billing history) had no invoices when first checked.
 - Google Cloud has several billing accounts plus an AI Studio prepaid balance. Each
