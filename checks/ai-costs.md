@@ -76,6 +76,9 @@ All paths are under `~/Desktop/global/ai-costs/`.
   expected, the charge date and the amount in $ and ₪, then the month total and next
   month's total. Then write the current `YYYY-MM` to `forecast_month.txt`. On later
   runs that month, the summary line is enough.
+  The forecast only knows plans whose last charge is in `receipts.json`: when the
+  claude.ai or ChatGPT billing page was not read, say that the forecast may be missing
+  those plans.
 
 ## Lessons
 
@@ -93,7 +96,9 @@ All paths are under `~/Desktop/global/ai-costs/`.
   report.
 - Claude Code's own `costUSD` for cross-model runs prices DeepSeek as if it were Claude,
   more than 20× too high. Use `claude_code_costs.py`.
-- The dashboard's `check` is written only by a page that is open while a file is written.
-  If its `at` stays older than your write, open the artifact in Chrome, write
-  `files/index.html` again unchanged (pinned to its version), wait a few seconds and
-  read `check` again; close the tab afterwards.
+- The dashboard's `check` was seen to run only when the page was open in a tab and a
+  write changed `files/index.html`; opening the page alone, or rewriting it unchanged,
+  left no new `check`. So after a run that changed `page.html`, open the artifact in
+  Chrome, write the page, wait a few seconds, read `check` and close the tab. After a
+  dataset-only run, a `check` older than the write (or missing) with no `runs` means the
+  page was not judged: say so in the report, and don't count it as `attention`.
