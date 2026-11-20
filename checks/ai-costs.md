@@ -93,3 +93,7 @@ All paths are under `~/Desktop/global/ai-costs/`.
   report.
 - Claude Code's own `costUSD` for cross-model runs prices DeepSeek as if it were Claude,
   more than 20× too high. Use `claude_code_costs.py`.
+- The dashboard's `check` is written only by a page that is open while a file is written.
+  If its `at` stays older than your write, open the artifact in Chrome, write
+  `files/index.html` again unchanged (pinned to its version), wait a few seconds and
+  read `check` again; close the tab afterwards.
