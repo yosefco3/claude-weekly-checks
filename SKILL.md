@@ -5,7 +5,10 @@ description: >
   this skill; it runs every check in its checks/ folder and sends one combined summary in
   the user's report language. Built-in checks: security-scan (agent instruction files,
   hooks, plugins, MCP servers and autorun files that could install or run malware),
-  skill-audit (overlapping, contradicting or redundant skills) and router-usage (weekly
+  skill-audit (overlapping, contradicting or redundant skills), prompt-audit (the
+  scheduled form of /doctor prompt-audit and /claude-api prompt-audit: instruction files
+  and Claude API prompts with wording written for older models, stale facts or
+  conflicting rules) and router-usage (weekly
   model-router stats: non-router subagents, main-thread lookups, long sessions, model
   mix, with recommendations). Use when the scheduled
   task runs it; when the user asks to run all checks or one of them now ("run the weekly
@@ -13,9 +16,11 @@ description: >
   "בדיקה שבועית", "תריץ את הבדיקות", "בדיקת אבטחה", "תבדוק שאין הוראות זדוניות",
   "סריקת סקילים", "תעשה סדר בסקילים", "יש סתירות בין הסקילים?", "אילו סקילים מיותרים",
   "router usage", "router report", "check the router", "בדיקת ראוטר", "דוח ראוטר",
-  "שימוש בראוטר", "כמה עלה הראוטר", "AI costs", "עלויות AI", "תעדכן את דשבורד העלויות");
+  "שימוש בראוטר", "כמה עלה הראוטר", "AI costs", "עלויות AI", "תעדכן את דשבורד העלויות",
+  "prompt audit", "audit my prompts", "ביקורת פרומפטים", "בדיקת פרומפטים");
   for a check's follow-up ("approve baseline" / "אשר בסיס" after a security scan,
-  "apply" / "בצע" after a skill audit); and WHENEVER the user wants to add, change, pause
+  "apply" / "בצע" after a skill audit, "apply prompt fixes" / "תקן פרומפטים" after a
+  prompt audit); and WHENEVER the user wants to add, change, pause
   or remove a weekly, monthly or other recurring check. New checks go here as
   checks/<name>.md, never as a separate scheduled task or skill.
 argument-hint: "[all | <check> | <check> apply | add <topic>]"
@@ -38,6 +43,8 @@ language = "Hebrew"              # report and summary language (default: English
 project_roots = ["~/Desktop"]    # where the security scan looks for projects
                                  # (default: whichever of ~/Desktop, ~/code, ~/projects,
                                  #  ~/src, ~/dev, ~/repos, ~/work exist)
+prompt_audit_model = "claude-opus-5-5"   # model the prompt audit targets
+                                 # (default: the model of the session running it)
 ```
 
 Read it at the start of every run. Write every report, summary line and final message
@@ -146,5 +153,6 @@ table below and no phrases in the description.
 |---|---|---|---|
 | `security-scan` | instruction files, hooks, plugins, MCP servers and autorun files: anything new that could install or run malware | weekly | `~/.claude/security/reports/` (baseline on apply) |
 | `skill-audit` | skills that overlap, contradict each other or are unused | weekly | `~/.claude/skills-audit/` (skills on apply) |
+| `prompt-audit` | `/doctor prompt-audit` and `/claude-api prompt-audit` as one check: `CLAUDE.md` files, skills, commands, subagents, and the prompts of projects that call the Claude API; wording written for older models, stale facts, conflicting rules. Reads only files changed since the last audit (all of them after a model change) | weekly | `~/.claude/prompt-audit/` (audited instruction files on apply) |
 | `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step | weekly | `~/.claude/model-router/reports/` |
 | `ai-costs` | refreshes the "עלויות AI" dashboard: Gmail receipts (read-only), LevelBot usage over ssh, Claude Code value from transcripts; flags big or duplicate charges | weekly | `~/Desktop/global/ai-costs/`, the dashboard artifact |

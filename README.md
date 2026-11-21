@@ -5,12 +5,13 @@ checks and runs them from one scheduled task. Each check is one Markdown file in
 `checks/`. Adding a check means adding a file, not another skill or another scheduled
 task.
 
-Three checks ship with it:
+Four checks ship with it:
 
 | Check | What it catches |
 |---|---|
 | `security-scan` | anything **new** in your AI-agent setup that could install or run malware, steal secrets, add persistence, send data out, or hide actions from you |
 | `skill-audit` | Claude skills that overlap, contradict each other, or go unused |
+| `prompt-audit` | the scheduled form of `/doctor prompt-audit` and `/claude-api prompt-audit`: `CLAUDE.md` files, skills, commands and subagents, and the prompts of projects that call the Claude API, checked for wording written for older models, stale facts and conflicting instructions; only files changed since the last audit are re-read |
 | `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step |
 
 ## Why a security scan for agent files
@@ -52,6 +53,8 @@ steer your agents.
   uses the built-in `Explore` agent. Its `router` CLI is what the router-usage check
   reads; without it that check reports `failed` (set `enabled: false` in
   `checks/router-usage.md` if you don't use the router).
+- For prompt-audit: the `claude-api` skill bundled with Claude Code (the check reports
+  `failed` when bundled skills are turned off).
 
 ## Install
 
@@ -101,7 +104,8 @@ the next weekly report.
 - Run checks on demand: "run the weekly checks", "security scan", "audit my skills"
   (or `/weekly-checks`, `/weekly-checks security-scan`).
 - After a report: "approve baseline" approves the new state of the security scan, and
-  "apply" carries out the skill-audit recommendations you confirm.
+  "apply" carries out the skill-audit recommendations you confirm. "apply prompt fixes
+  1, 3" applies the prompt-audit findings you name; "keep 2" settles one without an edit.
 - Run the scanner by hand at any time:
   ```bash
   python3 -I ~/.claude/skills/weekly-checks/scripts/scan_agent_instructions.py
@@ -133,6 +137,9 @@ check". A check can run `weekly` (the default) or `monthly`.
   next run compares against.
 - `~/.claude/skills-audit/`: skill-audit reports and `decisions.md` (merge and
   keep-separate decisions)
+- `~/.claude/prompt-audit/`: prompt-audit reports and proposed diffs, `decisions.md`
+  (findings you fixed or chose to keep) and `manifest.json` (hashes of the audited
+  files, so the next run reads only what changed)
 - `~/.claude/weekly-checks/`: `settings.toml` and the combined summaries
 
 ## Layout
@@ -143,9 +150,11 @@ checks/<name>.md                     one file per check (frontmatter + Goal/Run/
 checks/<name>/                       a check's supporting files
 scripts/scan_agent_instructions.py   the security scanner
 scripts/router_usage.py              router stats → metrics, flags and week-over-week trend
+scripts/prompt_surface.py            prompt-audit planner: files in scope and which changed since the last audit
 schedule/weekly-checks.md            the scheduled task (cron + prompt)
 tests/test_scan.py                   scanner tests (fake home directories, stdlib unittest)
 tests/test_router_usage.py           metrics script tests (anonymized fixture in tests/fixtures/)
+tests/test_prompt_surface.py         planner tests (fake home directories)
 ```
 
 ## Tests
@@ -153,6 +162,7 @@ tests/test_router_usage.py           metrics script tests (anonymized fixture in
 ```bash
 python3 -I ~/.claude/skills/weekly-checks/tests/test_scan.py -v
 python3 -I ~/.claude/skills/weekly-checks/tests/test_router_usage.py -v
+python3 -I ~/.claude/skills/weekly-checks/tests/test_prompt_surface.py -v
 ```
 
 ## Updating
