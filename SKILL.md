@@ -17,10 +17,11 @@ description: >
   "סריקת סקילים", "תעשה סדר בסקילים", "יש סתירות בין הסקילים?", "אילו סקילים מיותרים",
   "router usage", "router report", "check the router", "בדיקת ראוטר", "דוח ראוטר",
   "שימוש בראוטר", "כמה עלה הראוטר", "AI costs", "עלויות AI", "תעדכן את דשבורד העלויות",
-  "prompt audit", "audit my prompts", "ביקורת פרומפטים", "בדיקת פרומפטים");
+  "prompt audit", "audit my prompts", "ביקורת פרומפטים", "בדיקת פרומפטים",
+  "memory health", "check my memory", "בדיקת זיכרון", "בריאות הזיכרון");
   for a check's follow-up ("approve baseline" / "אשר בסיס" after a security scan,
   "apply" / "בצע" after a skill audit, "apply prompt fixes" / "תקן פרומפטים" after a
-  prompt audit); and WHENEVER the user wants to add, change, pause
+  prompt audit, "fix memory" / "תקן זיכרון" after a memory-health check); and WHENEVER the user wants to add, change, pause
   or remove a weekly, monthly or other recurring check. New checks go here as
   checks/<name>.md, never as a separate scheduled task or skill.
 argument-hint: "[all | <check> | <check> apply | add <topic>]"
@@ -156,3 +157,4 @@ table below and no phrases in the description.
 | `prompt-audit` | `/doctor prompt-audit` and `/claude-api prompt-audit` as one check: `CLAUDE.md` files, skills, commands, subagents, and the prompts of projects that call the Claude API; wording written for older models, stale facts, conflicting rules. Reads only files changed since the last audit (all of them after a model change) | weekly | `~/.claude/prompt-audit/` (audited instruction files on apply) |
 | `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step | weekly | `~/.claude/model-router/reports/` |
 | `ai-costs` | refreshes the "עלויות AI" dashboard: Gmail receipts (read-only), LevelBot usage over ssh, Claude Code value from transcripts; flags big or duplicate charges | weekly | `~/Desktop/global/ai-costs/`, the dashboard artifact |
+| `memory-health` | auto-memory folders (`~/.claude/projects/*/memory/`): memory files `MEMORY.md` never links to, dead links in it, an index over 200 lines or 25 KB; detects only, fixes on request | weekly | none (memory on apply) |

@@ -13,6 +13,7 @@ Four checks ship with it:
 | `skill-audit` | Claude skills that overlap, contradict each other, or go unused |
 | `prompt-audit` | the scheduled form of `/doctor prompt-audit` and `/claude-api prompt-audit`: `CLAUDE.md` files, skills, commands and subagents, and the prompts of projects that call the Claude API, checked for wording written for older models, stale facts and conflicting instructions; only files changed since the last audit are re-read |
 | `router-usage` | `router stats` for the last 7 days: non-router subagent spend, main-thread lookups, long sessions, cost per message per main model; recommendations, no apply step |
+| `memory-health` | auto-memory folders: memory files `MEMORY.md` never links to, dead links in it, an index over 200 lines or 25 KB; detects only, fixes on request |
 
 ## Why a security scan for agent files
 
